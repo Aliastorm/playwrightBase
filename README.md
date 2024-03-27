@@ -5,7 +5,12 @@
 npm ci
 npx playwright install
 ```
-
+## Vscode extensions
+- ESLint
+- Prettier
+- Git Blame
+- json
+- playwright Test for VSCode
 
 
 
