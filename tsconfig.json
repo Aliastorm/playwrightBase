@@ -1,0 +1,37 @@
+{
+    "exclude": [
+        "node_modules"
+    ],
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "commonjs",
+        "moduleResolution": "Node",
+        "sourceMap": true,
+        "outDir": "./tests-out",
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "paths": {
+            "@pom/*": [
+                "./src/pom/*"
+            ],
+            "@datas/*": [
+                "./src/datas/*"
+            ],
+            "@fixtures/*": [
+                "./src/fixtures/*"
+            ],
+            "@utils/*": [
+                "./src/utils/*"
+            ],
+            "@steps/*": [
+                "./src/steps/*"
+            ],
+            "@types/*": [
+                "./src/types/*"
+            ],
+            "@enums/*": [
+                "./src/enums/*"
+            ],
+        }
+    },
+}
