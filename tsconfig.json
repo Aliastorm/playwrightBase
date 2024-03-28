@@ -32,6 +32,9 @@
             "@enums/*": [
                 "./src/enums/*"
             ],
+            "@config/*": [
+                "./config/*"
+            ],
         }
     },
 }

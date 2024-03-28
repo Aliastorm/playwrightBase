@@ -1,3 +1,4 @@
+import { BaseURL } from '@config/env';
 import { defineConfig, devices } from '@playwright/test';
 
 /**
@@ -22,7 +23,7 @@ export default defineConfig({
         locale: 'fr-Fr', // affect navigator.language
         timezoneId: 'Europe/Paris',
         video: 'on-first-retry',
-        baseURL: 'TODO',
+        baseURL: BaseURL,
         trace: 'retain-on-failure',
         screenshot: 'only-on-failure',
     },

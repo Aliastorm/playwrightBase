@@ -1,17 +1,34 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '@fixtures/pomFixtures';
 
-test('has title', async ({ page }) => {
-    await page.goto('https://playwright.dev/');
-
-    await expect(page).toHaveTitle(/Playwright/);
+test.beforeAll(async () => {
+    console.info("I'm a beforeAll hook, I run once before all tests");
 });
 
-test('get started link', async ({ page }) => {
-    await page.goto('https://playwright.dev/');
+test.afterAll(async () => {
+    console.info("I'm an afterAll hook, I run once after all tests");
+});
 
-    // Click the get started link.
-    await page.getByRole('link', { name: 'Get started' }).click();
+test.beforeEach(async ({ samplePage }) => {
+    console.info("I'm a beforeEach hook, I run before each test");
+    await samplePage.goto();
+});
 
-    // Expects page to have a heading with the name of Installation.
-    await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+test('I can fill a form and submit', async ({ samplePage }) => {
+    const name = 'sample name';
+    const message = 'I am a sample message';
+    const successMessage = 'Thanks for contacting us';
+
+    await test.step('Fill the form and submit', async () => {
+        await samplePage.fillName(name);
+        await samplePage.fillMessage(message);
+
+        await samplePage.clickSubmit();
+    });
+
+    await test.step('Check the form was submitted', async () => {
+        await expect(
+            samplePage.form,
+            "I'm in error and I inform user I didn't see expected text",
+        ).toHaveText(successMessage);
+    });
 });
