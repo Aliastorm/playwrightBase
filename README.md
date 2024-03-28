@@ -119,8 +119,6 @@ Fixture are used to instanciate page object automatically in tests. The fixture 
 ### Ressources 
 https://playwright.dev/ (official documentation)
 
-https://github.com/mistertemp/shared-libs-qa (QA shared libraries)
-
 https://www.selenium.dev/documentation/test_practices/encouraged/page_object_models/
 
 https://medium.com/geekculture/mastering-playwright-how-to-create-effective-page-objects-ecbc06786c95
